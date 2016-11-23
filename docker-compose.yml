@@ -1,8 +1,14 @@
 version: "2"
 
 services:
-  #jenkins:
-  #applauncher:
+  welcomepage:
+    build: welcomepage
+
+  jenkins:
+    image: jenkins
+
+  applauncher:
+    build: welcomepage
 
   nginx-proxy:
     build: nginx-proxy
