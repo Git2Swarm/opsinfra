@@ -1,0 +1,10 @@
+version: "2"
+
+services:
+  #jenkins:
+  .applauncher:
+
+  nginx-proxy:
+    build: ngixn-proxy
+    ports:
+      - 443:443
