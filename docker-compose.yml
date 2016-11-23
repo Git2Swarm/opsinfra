@@ -2,7 +2,7 @@ version: "2"
 
 services:
   #jenkins:
-  .applauncher:
+  #applauncher:
 
   nginx-proxy:
     build: ngixn-proxy
