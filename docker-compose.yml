@@ -20,11 +20,18 @@ services:
       - DOCKER_HUB_USER=${DOCKER_HUB_USER}
       - DOCKER_HUB_PASSWORD=${DOCKER_HUB_PASSWORD}
 
+  artifactory:
+    image: docker.bintray.io/jfrog/artifactory-oss:latest
+    volumes:
+      - artifactory:/var/opt/jfrog/artifactory/
+
   nginx-proxy:
     build: nginx-proxy
     ports:
       - "443:443"
 
 volumes:
-   jenkins:
-     external: true
+  jenkins:
+    external: true
+  artifactory:
+    external: true
