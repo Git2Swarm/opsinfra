@@ -43,6 +43,7 @@ services:
     depends_on:
       - jenkins
       - applauncher
+      - artifactory
       - welcomepage
       - adminpage
 
