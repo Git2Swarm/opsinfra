@@ -4,6 +4,9 @@ services:
   welcomepage:
     build: welcomepage
 
+  adminpage:
+    build: adminpage
+
   jenkins:
     image: jenkins
     #environment:
@@ -37,6 +40,12 @@ services:
     build: nginx-proxy
     ports:
       - "443:443"
+    depends_on:
+      - jenkins
+      - applauncher
+      - artifactory
+      - welcomepage
+      - adminpage
 
 volumes:
   jenkins:
