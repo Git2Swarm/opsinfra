@@ -28,6 +28,8 @@ services:
       - ARTIFACTORY_PASSWORD=${ARTIFACTORY_PASSWORD}
       - DOCKER_HUB_USER=${DOCKER_HUB_USER}
       - DOCKER_HUB_PASSWORD=${DOCKER_HUB_PASSWORD}
+    depends_on:
+      - jenkins
 
   artifactory:
     image: docker.bintray.io/jfrog/artifactory-oss:latest
