@@ -40,7 +40,7 @@ services:
       - ARTIFACTORY_PASSWORD=${ARTIFACTORY_PASSWORD}
       - DOCKER_HUB_USER=${DOCKER_HUB_USER}
       - DOCKER_HUB_PASSWORD=${DOCKER_HUB_PASSWORD}
-      - STACK_LIST_URL={STACK_LIST_URL}
+      - STACK_LIST_URL=${STACK_LIST_URL}
     depends_on:
       - jenkins
     logging:
