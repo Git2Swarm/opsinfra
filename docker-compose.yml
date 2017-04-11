@@ -31,6 +31,8 @@ services:
 
   applauncher:
     build: AppLauncher
+    #ports:
+    #  - "8090:5000"
     environment:
       - JENKINS_URL=${JENKINS_URL}
       - JENKINS_USER=${JENKINS_USER}
@@ -47,6 +49,18 @@ services:
       driver: "gelf"
       options:
         gelf-address: "${LOGSTASH_URL}"
+
+  stackmanagement:
+    build: 
+      context: StackManagement
+    ports:
+      - "8073:80"
+    logging:
+      driver: "gelf"
+      options:
+        gelf-address: "${LOGSTASH_URL}"
+    # NOTE: no depends_on is set yet
+    # NOTE: not part of nginx proxy yet
 
   artifactory:
     image: docker.bintray.io/jfrog/artifactory-oss:latest
