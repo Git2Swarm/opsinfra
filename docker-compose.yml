@@ -53,8 +53,6 @@ services:
   stackmanagement:
     build: 
       context: StackManagement
-    ports:
-      - "8073:80"
     logging:
       driver: "gelf"
       options:
