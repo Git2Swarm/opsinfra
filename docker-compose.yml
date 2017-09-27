@@ -50,9 +50,9 @@ services:
       options:
         gelf-address: "${LOGSTASH_URL}"
 
-  stackmanagement:
+  agilecloudframework:
     build: 
-      context: StackManagement
+      context: AgileCloudFramework
     logging:
       driver: "gelf"
       options:
