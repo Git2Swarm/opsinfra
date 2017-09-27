@@ -61,6 +61,8 @@ services:
   fileserver:
     build:
       context: GithubAdapter
+    volumes:
+      - ${HOME}/config/GithubAdapter-config.json:/src/config.json
     logging:
       driver: "gelf"
       options:
