@@ -62,11 +62,11 @@ services:
     build:
       context: GithubAdapter
     volumes:
-      - ${HOME}/config/GithubAdapter-config.json:/src/config.json
-    #logging:
-    #  driver: "gelf"
-    #  options:
-    #    gelf-address: "${LOGSTASH_URL}"
+      - /etc/opsinfra/GithubAdapter-config.json:/src/config.json
+    logging:
+      driver: "gelf"
+      options:
+        gelf-address: "${LOGSTASH_URL}"
 
   artifactory:
     image: docker.bintray.io/jfrog/artifactory-oss:latest
